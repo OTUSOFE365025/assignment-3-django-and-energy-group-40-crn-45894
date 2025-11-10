@@ -24,9 +24,30 @@ from db.models import *
 ############################################################################
 """ Replace the code below with your own """
 
-# Seed a few users in the database
-User.objects.create(name='Dan')
-User.objects.create(name='Robert')
+from db.models import Product  # ensure we’re using the Product model
 
-for u in User.objects.all():
-    print(f'ID: {u.id} \tUsername: {u.name}')
+# --------------------------------------------------------------
+# STEP 1: Populate database with sample products
+# --------------------------------------------------------------
+if not Product.objects.exists():
+    Product.objects.create(upc='123456789012', name='Apple', price=0.99)
+    Product.objects.create(upc='987654321098', name='Banana', price=0.59)
+    Product.objects.create(upc='555555555555', name='Milk', price=3.49)
+    print("Database seeded with sample products.")
+else:
+    print("Database already has products.")
+
+# --------------------------------------------------------------
+# STEP 2: Scan product by UPC and show name + price
+# --------------------------------------------------------------
+while True:
+    upc_input = input("\nScan or enter a product UPC (or type 'exit'): ").strip()
+    if upc_input.lower() == 'exit':
+        break
+
+    try:
+        product = Product.objects.get(upc=upc_input)
+        print(f"Product: {product.name} | Price: ${product.price}")
+    except Product.DoesNotExist:
+        print("Unknown product. Please try again.")
+
