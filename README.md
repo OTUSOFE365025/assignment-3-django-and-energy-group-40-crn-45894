@@ -1,3 +1,4 @@
+[![Review Assignment Due Date](https://classroom.github.com/assets/deadline-readme-button-22041afd0340ce965d47ae6ef1cefeee28c7c493a6346c4f15d667ab976d596c.svg)](https://classroom.github.com/a/-cPJVYMd)
 Django ORM Standalone
 =====================
 
@@ -83,6 +84,46 @@ Output from command: ```python main.py```
 ID: 1	Username: Dan
 ID: 2	Username: Robert
 ```
+
+# 🧾 Assignment 3 – Django ORM Cash Register
+
+## Task 1 – Cash Register Implementation (Q1)
+
+### 📘 Description
+This project uses the **Django ORM** in a **stand-alone Python script** to simulate a simple **cash register system**.  
+The application performs two key functions:
+
+1. **Populates the database** with products (UPC code, name, price)  
+2. **Scans products** by their UPC and displays the corresponding name and price  
+
+This was implemented using the provided Django-ORM starter template.
+
+**Program running (`python main.py`)**
+![Program Output Screenshot](screenshots/program_output.png)
+
+
+---
+
+### ⚙️ Setup & Execution
+
+```bash
+# 1. Activate virtual environment
+source venv/bin/activate              # macOS / Linux
+# or
+venv\Scripts\activate                 # Windows
+
+# 2. Install dependencies
+pip install django
+
+# 3. Apply database migrations
+python manage.py makemigrations db
+python manage.py migrate
+
+# 4. Run the application
+python main.py
+
+**Program running (`python main.py`)**
+![Program Output Screenshot](screenshots/program_output.png)
 
 :mortar_board: Django Models
 ----------------------------
