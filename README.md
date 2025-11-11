@@ -118,6 +118,9 @@ python manage.py migrate
 # 4. Run the application
 python main.py
 
+**Program running (`python main.py`)**
+![Program Output Screenshot](screenshots/program_output.png)
+
 :mortar_board: Django Models
 ----------------------------
 
