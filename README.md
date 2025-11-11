@@ -100,6 +100,37 @@ This was implemented using the provided Django-ORM starter template.
 
 ---
 
+## 🧠 Code Description
+
+This Django ORM program simulates a **standalone cash register system** using Python and the database features of Django without running a web server.
+
+### 📁 File Overview
+| File | Purpose |
+|------|----------|
+| **db/models.py** | Defines the `Product` model with fields for UPC code, name, and price. This model represents a single product in the cash register database. |
+| **main.py** | Contains the main program logic. It initializes the Django environment, populates the database with product data (if empty), and allows scanning of products by entering a UPC code in the terminal. |
+| **settings.py** | Configures the Django environment, including the database backend (SQLite). |
+| **manage.py** | Django’s built-in utility for applying migrations and managing the ORM. |
+
+---
+
+### ⚙️ Code Functionality
+1. **Database Setup:**  
+   The script connects to Django’s ORM and initializes the database (`db.sqlite3`) using `python manage.py makemigrations db` and `python manage.py migrate`.
+
+2. **Populating Products:**  
+   The `main.py` script checks whether the product table is empty. If it is, it creates sample products such as Apple, Banana, and Milk with their UPC codes and prices.
+
+3. **Scanning Products:**  
+   After seeding, the user is prompted to **enter or scan a UPC code** in the terminal.  
+   - If the UPC exists in the database, the product name and price are displayed.  
+   - If not, the program shows “Unknown product.”  
+
+4. **Exit Option:**  
+   Typing `exit` closes the program gracefully.
+
+---
+
 ### ⚙️ Setup & Execution
 
 ```bash
